@@ -125,7 +125,7 @@ const Home = () => {
         </tbody>
         </table>
         <div className='h-10 d-flex justify-content-end   pt-0 mt-0 border mx-auto' style={{width:'90%'}}>
-          <h3 className=' me-4'>Total {formatNumber(totalRevenue)}</h3>
+          <h3 className=' me-4 p-2'>Total {formatNumber(totalRevenue)}</h3>
         </div>
     </div>
 
