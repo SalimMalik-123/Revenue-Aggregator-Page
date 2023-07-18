@@ -25,6 +25,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+/* element.style {
+  border-color: brown!important;
+} */
 
 .App-link {
   color: #61dafb;

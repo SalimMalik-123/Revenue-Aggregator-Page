@@ -17,7 +17,9 @@ interface APIData {
 }
 interface Product{
   name : string;
-  revenue : number
+  units : number;
+  revenue : number;
+
 }
 
 const Home = () => {
@@ -104,24 +106,26 @@ const Home = () => {
 
     return (
       <div className='gridtable h-100 px-5'>
-        <table className='table table-striped border rounded mb-0 table-responsive h-90  w-100' >
+        <table className='table table-striped border rounded mb-0 table-responsive h-90 mx-auto ' style={{width:'90%'}}>
         <thead className='table-dark' >
           <tr>
+            <th >S.No</th>
             <th >Product Name</th>
             <th>Total Revenue</th>
           </tr>
         </thead>
         <tbody>
-          {filteredProducts.map((product) => (
+          {filteredProducts.map((product,index) => (
             <tr key={product.name}>
+              <td>{index+1}</td>
               <td>{product.name}</td>
               <td>{formatNumber(product.revenue)}</td>
             </tr>
           ))}
         </tbody>
         </table>
-        <div className='h-10 d-flex justify-content-center   pt-0 mt-0 border'>
-          <h3 className=' '>Total {formatNumber(totalRevenue)}</h3>
+        <div className='h-10 d-flex justify-content-end   pt-0 mt-0 border mx-auto' style={{width:'90%'}}>
+          <h3 className=' me-4'>Total {formatNumber(totalRevenue)}</h3>
         </div>
     </div>
 
@@ -134,8 +138,8 @@ const Home = () => {
          <img src={flame} className='ms-3 mt-2' style={{width:'40px',height:'40px'}} alt='Flame Image' />
          <h4 className='ms-2 mt-3 ' style={{color:'#eae3e3'}}>Revenue Aggregator</h4>
       </div>
-      <div className="search-container w-100 pt-2">
-        <div className="form-group has-search w-75 border border-2 rounded  mx-auto">
+      <div className="search-container w-100 pt-3">
+        <div className="form-group has-search w-75 border border-secondary border-2 rounded  mx-auto" style={{borderColor: "brown!important"}}>
           <span className="fa fa-search form-control-feedback" ></span>
           <input 
             type="text"  
